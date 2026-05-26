@@ -20,57 +20,57 @@ Milestone Backend is a RESTful API service designed to support collaborative pro
 
 #### 3.1 User Authentication & Authorization
 
-- **User Registration:** Account creation with email verification
-- **User Login:** Secure authentication with JWT tokens
-- **Password Management:** Change password, forgot/reset password functionality
-- **Email Verification:** Account verification via email tokens
-- **Token Management:** Access token refresh mechanism
-- **Role-Based Access Control:** Three-tier permission system (Admin, Project Admin, Member)
+- [x] **User Registration:** Account creation with email verification
+- [x] **User Login:** Secure authentication with JWT tokens
+- [x] **Password Management:** Change password, forgot/reset password functionality
+- [x] **Email Verification:** Account verification via email tokens
+- [x] **Token Management:** Access token refresh mechanism
+- [ ] **Role-Based Access Control:** Three-tier permission system (Admin, Project Admin, Member)
 
 #### 3.2 Project Management
 
-- **Project Creation:** Create new projects with name and description
-- **Project Listing:** View all projects user has access to with member count
-- **Project Details:** Access individual project information
-- **Project Updates:** Modify project information (Admin only)
-- **Project Deletion:** Remove projects (Admin only)
+- [ ] **Project Creation:** Create new projects with name and description
+- [ ] **Project Listing:** View all projects user has access to with member count
+- [ ] **Project Details:** Access individual project information
+- [ ] **Project Updates:** Modify project information (Admin only)
+- [ ] **Project Deletion:** Remove projects (Admin only)
 
 #### 3.3 Team Member Management
 
-- **Member Addition:** Invite users to projects via email
-- **Member Listing:** View all project team members
-- **Role Management:** Update member roles within projects (Admin only)
-- **Member Removal:** Remove team members from projects (Admin only)
+- [ ] **Member Addition:** Invite users to projects via email
+- [ ] **Member Listing:** View all project team members
+- [ ] **Role Management:** Update member roles within projects (Admin only)
+- [ ] **Member Removal:** Remove team members from projects (Admin only)
 
 #### 3.4 Task Management
 
-- **Task Creation:** Create tasks with title, description, and assignee
-- **Task Listing:** View all tasks within a project
-- **Task Details:** Access individual task information
-- **Task Updates:** Modify task information and status
-- **Task Deletion:** Remove tasks from projects
-- **File Attachments:** Support for multiple file attachments on tasks
-- **Task Assignment:** Assign tasks to specific team members
-- **Status Tracking:** Three-state status system (Todo, In Progress, Done)
+- [ ] **Task Creation:** Create tasks with title, description, and assignee
+- [ ] **Task Listing:** View all tasks within a project
+- [ ] **Task Details:** Access individual task information
+- [ ] **Task Updates:** Modify task information and status
+- [ ] **Task Deletion:** Remove tasks from projects
+- [ ] **File Attachments:** Support for multiple file attachments on tasks
+- [ ] **Task Assignment:** Assign tasks to specific team members
+- [ ] **Status Tracking:** Three-state status system (Todo, In Progress, Done)
 
 #### 3.5 Subtask Management
 
-- **Subtask Creation:** Add subtasks to existing tasks
-- **Subtask Updates:** Modify subtask details and completion status
-- **Subtask Deletion:** Remove subtasks (Admin/Project Admin only)
-- **Member Completion:** Allow members to mark subtasks as complete
+- [ ] **Subtask Creation:** Add subtasks to existing tasks
+- [ ] **Subtask Updates:** Modify subtask details and completion status
+- [ ] **Subtask Deletion:** Remove subtasks (Admin/Project Admin only)
+- [ ] **Member Completion:** Allow members to mark subtasks as complete
 
 #### 3.6 Project Notes
 
-- **Note Creation:** Add notes to projects (Admin only)
-- **Note Listing:** View all project notes
-- **Note Details:** Access individual note content
-- **Note Updates:** Modify existing notes (Admin only)
-- **Note Deletion:** Remove notes (Admin only)
+- [ ] **Note Creation:** Add notes to projects (Admin only)
+- [ ] **Note Listing:** View all project notes
+- [ ] **Note Details:** Access individual note content
+- [ ] **Note Updates:** Modify existing notes (Admin only)
+- [ ] **Note Deletion:** Remove notes (Admin only)
 
 #### 3.7 System Health
 
-- **Health Check:** API endpoint for system status monitoring
+- [x] **Health Check:** API endpoint for system status monitoring
 
 ### 4. Technical Specifications
 
@@ -78,51 +78,51 @@ Milestone Backend is a RESTful API service designed to support collaborative pro
 
 **Authentication Routes** (`/api/v1/auth/`)
 
-- `POST /register` - User registration
-- `POST /login` - User authentication
-- `POST /logout` - User logout (secured)
-- `GET /current-user` - Get current user info (secured)
-- `POST /change-password` - Change user password (secured)
-- `POST /refresh-token` - Refresh access token
-- `GET /verify-email/:verificationToken` - Email verification
-- `POST /forgot-password` - Request password reset
-- `POST /reset-password/:resetToken` - Reset forgotten password
-- `POST /resend-email-verification` - Resend verification email (secured)
+- [x] `POST /register` - User registration
+- [x] `POST /login` - User authentication
+- [x] `POST /logout` - User logout (secured)
+- [x] `GET /current-user` - Get current user info (secured)
+- [x] `POST /change-password` - Change user password (secured)
+- [x] `POST /refresh-token` - Refresh access token
+- [x] `GET /verify-email/:verificationToken` - Email verification
+- [x] `POST /forgot-password` - Request password reset
+- [x] `POST /reset-password/:resetToken` - Reset forgotten password
+- [x] `POST /resend-email-verification` - Resend verification email (secured)
 
 **Project Routes** (`/api/v1/projects/`)
 
-- `GET /` - List user projects (secured)
-- `POST /` - Create project (secured)
-- `GET /:projectId` - Get project details (secured, role-based)
-- `PUT /:projectId` - Update project (secured, Admin only)
-- `DELETE /:projectId` - Delete project (secured, Admin only)
-- `GET /:projectId/members` - List project members (secured)
-- `POST /:projectId/members` - Add project member (secured, Admin only)
-- `PUT /:projectId/members/:userId` - Update member role (secured, Admin only)
-- `DELETE /:projectId/members/:userId` - Remove member (secured, Admin only)
+- [ ] `GET /` - List user projects (secured)
+- [ ] `POST /` - Create project (secured)
+- [ ] `GET /:projectId` - Get project details (secured, role-based)
+- [ ] `PUT /:projectId` - Update project (secured, Admin only)
+- [ ] `DELETE /:projectId` - Delete project (secured, Admin only)
+- [ ] `GET /:projectId/members` - List project members (secured)
+- [ ] `POST /:projectId/members` - Add project member (secured, Admin only)
+- [ ] `PUT /:projectId/members/:userId` - Update member role (secured, Admin only)
+- [ ] `DELETE /:projectId/members/:userId` - Remove member (secured, Admin only)
 
 **Task Routes** (`/api/v1/tasks/`)
 
-- `GET /:projectId` - List project tasks (secured, role-based)
-- `POST /:projectId` - Create task (secured, Admin/Project Admin)
-- `GET /:projectId/t/:taskId` - Get task details (secured, role-based)
-- `PUT /:projectId/t/:taskId` - Update task (secured, Admin/Project Admin)
-- `DELETE /:projectId/t/:taskId` - Delete task (secured, Admin/Project Admin)
-- `POST /:projectId/t/:taskId/subtasks` - Create subtask (secured, Admin/Project Admin)
-- `PUT /:projectId/st/:subTaskId` - Update subtask (secured, role-based)
-- `DELETE /:projectId/st/:subTaskId` - Delete subtask (secured, Admin/Project Admin)
+- [ ] `GET /:projectId` - List project tasks (secured, role-based)
+- [ ] `POST /:projectId` - Create task (secured, Admin/Project Admin)
+- [ ] `GET /:projectId/t/:taskId` - Get task details (secured, role-based)
+- [ ] `PUT /:projectId/t/:taskId` - Update task (secured, Admin/Project Admin)
+- [ ] `DELETE /:projectId/t/:taskId` - Delete task (secured, Admin/Project Admin)
+- [ ] `POST /:projectId/t/:taskId/subtasks` - Create subtask (secured, Admin/Project Admin)
+- [ ] `PUT /:projectId/st/:subTaskId` - Update subtask (secured, role-based)
+- [ ] `DELETE /:projectId/st/:subTaskId` - Delete subtask (secured, Admin/Project Admin)
 
 **Note Routes** (`/api/v1/notes/`)
 
-- `GET /:projectId` - List project notes (secured, role-based)
-- `POST /:projectId` - Create note (secured, Admin only)
-- `GET /:projectId/n/:noteId` - Get note details (secured, role-based)
-- `PUT /:projectId/n/:noteId` - Update note (secured, Admin only)
-- `DELETE /:projectId/n/:noteId` - Delete note (secured, Admin only)
+- [ ] `GET /:projectId` - List project notes (secured, role-based)
+- [ ] `POST /:projectId` - Create note (secured, Admin only)
+- [ ] `GET /:projectId/n/:noteId` - Get note details (secured, role-based)
+- [ ] `PUT /:projectId/n/:noteId` - Update note (secured, Admin only)
+- [ ] `DELETE /:projectId/n/:noteId` - Delete note (secured, Admin only)
 
 **Health Check** (`/api/v1/healthcheck/`)
 
-- `GET /` - System health status
+- [x] `GET /` - System health status
 
 #### 4.2 Permission Matrix
 
